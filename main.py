@@ -1,4 +1,11 @@
 # Importar arquivo .csv
+import csv
+with open("pontos_taxi.csv", encoding='utf-8') as data_file:
+    dados = csv.reader(data_file)
+
+# Dados dos pontos de táxi
+
+
 
 # Menu do programa
 def menu():
@@ -24,4 +31,4 @@ def menu():
         print()
         menu()
 
-menu()
+# menu()
