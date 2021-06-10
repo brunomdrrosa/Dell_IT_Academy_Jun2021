@@ -1,22 +1,20 @@
+# Importar arquivo .csv
+import pandas
+dados = pandas.read_csv("pontos_taxi.csv")
+
+# Converter os dados para listas
+lista_codigos = dados["codigo"].to_list()
+lista_nomes = dados["nome"].to_list()
+lista_telefone = dados["telefone"].to_list()
+
+print(lista_nomes)
+
 # Dados dos pontos de táxi
 telefone = []
 logradouro = []
 numero = []
 latitude = []
 longitude = []
-
-# Importar arquivo .csv
-import csv
-with open("weather_data.csv", encoding='utf-8') as data_file:
-    data = csv.reader(data_file)
-    codigo_taxi = []
-    nome_taxi = []
-    for row in data:
-        if row[0] != "codigo" and row[1] != "nome":
-            codigo_taxi.append(int(row[0]))
-            nome_taxi.append(row[1])
-    print(codigo_taxi)        
-    print(nome_taxi)
 
 
 
