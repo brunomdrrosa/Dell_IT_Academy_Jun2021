@@ -1,8 +1,9 @@
 # Importar arquivo .csv
 import pandas as pd
-dados = pd.read_csv("pontos_taxi.csv", encoding='utf-8-sig')
-
+dados = pd.read_csv("pontos_taxi.csv", encoding='utf-8')
 pd.set_option('display.max_rows', None)
+
+from geopy.distance import great_circle
 
 # Converter os dados para listas
 lista_codigos = dados["codigo"].to_list()
@@ -13,13 +14,35 @@ lista_numero = dados["numero"].to_list()
 lista_latitude = dados["latitude"].to_list()
 lista_longitude = dados["longitude"].to_list()
 
-# Função para armazenar a latitude e longitude do usuário
-def opcao2():
-    print("Informe sua localização:")
-    latitude = float(input("Digite sua latitude: "))
-    longitude = float(input("Digite sua longitude: "))
-    print("Localização armazenada.")
-    menu()
+latitude = 0
+longitude = 0
+
+# from coordenadas import rodoviaria, av_das_industrias
+# Função que mostra os 3 pontos de táxis mais próximos ao usuário;
+def opcao3():
+    colunas = ['latitude', 'longitude']
+    coordenadas = pd.DataFrame(dados, columns=colunas)
+    print(coordenadas)
+    
+        
+    # test = great_circle(teste, coordenada).km
+    # print(f'A distancia de é {test:.2f}km')   
+    
+    # rodoviaria = (-30.02399616, -51.2194512698)
+    # distancia = great_circle(teste, rodoviaria).km
+    # print(f'A distancia de é {distancia:.2f}km')
+
+# Função para pegar os pontos de taxí de uma determinada rua ou logradouro
+def opcao4():
+    buscar = input("Digite o nome da rua ou do logradouro:\n").upper()
+    if buscar in lista_logradouro:
+        print(f"Os pontos de taxi ao longo de {buscar} são:")
+        ruas_em_logradouro = dados[dados['logradouro'] == buscar]
+        print(ruas_em_logradouro)
+        menu()
+    else:
+        print("Não encontramos o logradouro informado no sistema.")
+        menu()
 
 # Menu do programa
 def menu():
@@ -38,13 +61,17 @@ def menu():
         menu()
     # Permitir que o usuário digite sua localização geográfica e armazená-la
     elif opcao == 2:
-        opcao2()
+        print("Informe sua localização:")
+        latitude = float(input("Digite sua latitude: "))
+        longitude = float(input("Digite sua longitude: "))
+        print("Localização armazenada.")
+        menu()
     # Encontrar os 3 pontos mais próximos baseado na latitude e longitude do usuário
     elif opcao == 3:
-        print()
+        opcao3()
     # Buscar pontos por logradouro
     elif opcao == 4:
-        print("Opção 4")
+        opcao4()
     # Fechar o programa
     elif opcao == 5:
         print("Fechando o programa...")
