@@ -1,7 +1,3 @@
-rodoviaria = (-30.02399616, -51.2194512698)
-av_das_industrias = (-29.9872776651, -51.1698367788)
-dom_pedroii = (-30.0206083042, -51.1862840548)
-
 nomesRuas = ["RODOVIÁRIA", "AV. DAS INDÚSTRIAS X AV. SEVERO DULLIUS", "DOM PEDRO II X CORCOVADO", "SHOPPING CENTER IGUATEMI II",
 "RAMALHETE X TENENTE ALPOIN", "MUCIO TEIXEIRA C/ AURELIANO DE FIGUEIREDO PINTO", "MARCILIO DIAS X GETULIO VARGAS",
 "SILVEIRO X RADIO E TV GAUCHA", "HOFFMANN X CRISTÓVÃO COLOMBO", "MAXXI ATACADO HUMAITÁ", "JOÃO PESSOA X VENÂNCIO AIRES",
@@ -93,5 +89,21 @@ nomesRuas = ["RODOVIÁRIA", "AV. DAS INDÚSTRIAS X AV. SEVERO DULLIUS", "DOM PED
 " Rua Jorge Babot Miranda x Av. Juca Batista", "JOSÉ FERREIRA DA SILVA X BENTO GONÇALVES", "HOTEL HOLIDAY", "FARRAPOS X HOFFMANN", "ASSIS BRASIL X SERTÓRIO", 
 "JOÃO ALFREDO X REPÚBLICA", "BOULEVARD STRIP CENTER", "MARILAND X 24 DE OUTUBRO", "DONA FIRMINA X BENTO GONÇALVES"]
 
-print(len(nomesRuas))
-ruas = [rodoviaria, av_das_industrias, dom_pedroii]
+rodoviaria = (-30.02399616, -51.2194512698)
+av_das_industrias = (-29.9872776651, -51.1698367788)
+dom_pedroii = (-30.0206083042, -51.1862840548)
+shopping_center_iguatemi_ii = (-30.0254487549, -51.1632092798)
+ramalhete = (-30.067301719, -51.1768251093)
+mucio_texeira = (-30.0438007238, -51.2233274456)
+marcilio_dias = (-30.049792624, -51.2218594369)
+silveiro = (-30.0705347259, -51.2309254081)
+hoffmann = (-30.0215040522, -51.207416905)
+maxxi = (-29.9823906495, -51.192600204)
+joao_pessoa = (-30.0411891021, -51.2164530974)
+dan = (-30.0310650045, -51.2258034105)
+
+
+
+# print(len(nomesRuas))
+ruas = [rodoviaria, av_das_industrias, dom_pedroii, shopping_center_iguatemi_ii, ramalhete, mucio_texeira, marcilio_dias, silveiro, 
+hoffmann, maxxi, joao_pessoa, dan]

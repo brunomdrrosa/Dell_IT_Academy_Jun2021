@@ -1,9 +1,18 @@
 # Importar arquivo .csv
+# from pandas import ExcelWriter
+# from pandas import ExcelFile
+# import numpy as np
 import pandas as pd
 dados = pd.read_csv("pontos_taxi.csv", encoding='utf-8')
+dados['telefone'] = dados['telefone'].fillna("")
+dados['nome'] = dados['nome'].str.replace(u"Å", "A")
+
+# print(dados.iloc[1, 2])
 pd.set_option('display.max_rows', None)
 
 from geopy.distance import great_circle
+from heapq import nsmallest
+from coordenadas import nomesRuas, ruas
 
 # Converter os dados para listas
 lista_codigos = dados["codigo"].to_list()
@@ -14,36 +23,61 @@ lista_numero = dados["numero"].to_list()
 lista_latitude = dados["latitude"].to_list()
 lista_longitude = dados["longitude"].to_list()
 
-latitude = 0
-longitude = 0
+coordenadas = (0, 0)
 
-from coordenadas import nomesRuas, ruas
+def opcao2():
+    global coordenadas
+    print("Informe sua localização:")
+    latitude = float(input("Digite sua latitude: "))
+    longitude = float(input("Digite sua longitude: "))
+    coordenadas = (latitude, longitude)
+    print(coordenadas)
+    print("Localização armazenada.")
+    menu()
+    # return coordenadas    
+
 # Função que mostra os 3 pontos de táxis mais próximos ao usuário;
 def opcao3():
-    # for x in lista_latitude:
-    #     coordenada = []
-    #     itens = pd.concat([dados[["latitude"]], dados["longitude"].str.split(', ', expand=True)], axis=1)
-        
-    #     coordenada.append(itens)
-    # print(coordenada)
-    #     posicao = 0
-    #     
-    #     teste = dados.iloc[:, 1:3]
-    #     coordenada.append(teste)
-    # print(coordenada)
-    # for x in lista_longitude:
-    #     coordenada = []
-    # rodoviaria = (f'({lista_latitude[0]}, {lista_longitude[0]})')
+    print(f"Suas coordenadas são: {coordenadas}")
+    if coordenadas == (0, 0):
+        print("Você não informou a sua localização na opção 2 do menu")
+        menu()
+    # posicao = -1
+    # latitude_distancias = []
+    # longitude_distancias = []
+    
+    # for x in range(379):
+    #     posicao += 1
+    #     latitude_taxi_csv = dados.at[posicao, "latitude"]
+    #     longitude_taxi_csv = dados.at[posicao, "longitude"]
+    #     latitude_distancias.append(latitude_taxi_csv)
+    #     longitude_distancias.append(longitude_taxi_csv)
+    # print(latitude_distancias)
+    # print(longitude_distancias)
 
-    # colunas = ['latitude', 'longitude']
-    # coordenadas = pd.DataFrame(dados, columns=colunas)
-    # print(coordenadas)
-    posicao = -1
-    for rua in ruas:
-        posicao += 1
-        teste = (-29.9598916, -51.0951607)  
-        distancia = great_circle(teste, rua).km
-        print(f'A distancia de {nomesRuas[posicao]} é {distancia:.2f}km')
+    # tupla = (latitude_distancias[0], longitude_distancias[0])
+    # print(tupla)
+    # teste = (-29.9598916, -51.0951607)  
+    # distancia = great_circle(teste, tupla).km
+    # print(distancia)
+    else:
+        posicao = -1
+        todas_distancias = []
+        for rua in ruas:
+            posicao += 1
+            # teste = (-29.9598916, -51.0951607)  
+            distancia = great_circle(coordenadas, rua).km
+            todas_distancias.append(distancia)
+            print(f'A distância da {nomesRuas[posicao]} é de {distancia:.2f}km')
+
+        menores_distancias = nsmallest(3, todas_distancias)
+        print()
+        print(f'Tem um ponto de táxi há {menores_distancias[0]:.2f}km de você')
+        print(f'Tem um ponto de táxi há {menores_distancias[1]:.2f}km de você')
+        print(f'Tem um ponto de táxi há {menores_distancias[2]:.2f}km de você')
+        if distancia == menores_distancias:
+            print(nomesRuas)
+        menu()
 
 # Função para pegar os pontos de taxí de um determinado logradouro
 def opcao4():
@@ -75,11 +109,7 @@ def menu():
         menu()
     # Permitir que o usuário digite sua localização geográfica e armazená-la
     elif opcao == 2:
-        print("Informe sua localização:")
-        latitude = float(input("Digite sua latitude: "))
-        longitude = float(input("Digite sua longitude: "))
-        print("Localização armazenada.")
-        menu() 
+        opcao2()
     # Encontrar os 3 pontos mais próximos baseado na latitude e longitude do usuário
     elif opcao == 3:
         opcao3()
