@@ -17,26 +17,39 @@ lista_longitude = dados["longitude"].to_list()
 latitude = 0
 longitude = 0
 
-# from coordenadas import rodoviaria, av_das_industrias
+from coordenadas import nomesRuas, ruas
 # Função que mostra os 3 pontos de táxis mais próximos ao usuário;
 def opcao3():
-    colunas = ['latitude', 'longitude']
-    coordenadas = pd.DataFrame(dados, columns=colunas)
-    print(coordenadas)
-    
+    # for x in lista_latitude:
+    #     coordenada = []
+    #     itens = pd.concat([dados[["latitude"]], dados["longitude"].str.split(', ', expand=True)], axis=1)
         
-    # test = great_circle(teste, coordenada).km
-    # print(f'A distancia de é {test:.2f}km')   
-    
-    # rodoviaria = (-30.02399616, -51.2194512698)
-    # distancia = great_circle(teste, rodoviaria).km
-    # print(f'A distancia de é {distancia:.2f}km')
+    #     coordenada.append(itens)
+    # print(coordenada)
+    #     posicao = 0
+    #     
+    #     teste = dados.iloc[:, 1:3]
+    #     coordenada.append(teste)
+    # print(coordenada)
+    # for x in lista_longitude:
+    #     coordenada = []
+    # rodoviaria = (f'({lista_latitude[0]}, {lista_longitude[0]})')
 
-# Função para pegar os pontos de taxí de uma determinada rua ou logradouro
+    # colunas = ['latitude', 'longitude']
+    # coordenadas = pd.DataFrame(dados, columns=colunas)
+    # print(coordenadas)
+    posicao = -1
+    for rua in ruas:
+        posicao += 1
+        teste = (-29.9598916, -51.0951607)  
+        distancia = great_circle(teste, rua).km
+        print(f'A distancia de {nomesRuas[posicao]} é {distancia:.2f}km')
+
+# Função para pegar os pontos de taxí de um determinado logradouro
 def opcao4():
-    buscar = input("Digite o nome da rua ou do logradouro:\n").upper()
+    buscar = input("Digite o nome do logradouro:\n").upper()
     if buscar in lista_logradouro:
-        print(f"Os pontos de taxi ao longo de {buscar} são:")
+        print(f"Os pontos de taxi ao longo da {buscar} são:")
         ruas_em_logradouro = dados[dados['logradouro'] == buscar]
         print(ruas_em_logradouro)
         menu()
@@ -57,7 +70,8 @@ def menu():
 
     # Listar na tela os dados de todos os pontos de taxi da cidade
     if opcao == 1:
-        print(dados)
+        # print(dados)
+        print(dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]])
         menu()
     # Permitir que o usuário digite sua localização geográfica e armazená-la
     elif opcao == 2:
@@ -65,7 +79,7 @@ def menu():
         latitude = float(input("Digite sua latitude: "))
         longitude = float(input("Digite sua longitude: "))
         print("Localização armazenada.")
-        menu()
+        menu() 
     # Encontrar os 3 pontos mais próximos baseado na latitude e longitude do usuário
     elif opcao == 3:
         opcao3()
