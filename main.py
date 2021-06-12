@@ -1,13 +1,8 @@
 # Importar arquivo .csv
-# from pandas import ExcelWriter
-# from pandas import ExcelFile
-# import numpy as np
 import pandas as pd
 dados = pd.read_csv("pontos_taxi.csv", encoding='utf-8')
 dados['telefone'] = dados['telefone'].fillna("")
 dados['nome'] = dados['nome'].str.replace(u"Å", "A")
-
-# print(dados.iloc[1, 2])
 pd.set_option('display.max_rows', None)
 
 from geopy.distance import great_circle
@@ -33,34 +28,15 @@ def opcao2():
     coordenadas = (latitude, longitude)
     print(coordenadas)
     print("Localização armazenada.")
-    menu()
-    # return coordenadas    
+    menu()  
 
 # Função que mostra os 3 pontos de táxis mais próximos ao usuário;
 def opcao3():
-    print(f"Suas coordenadas são: {coordenadas}")
     if coordenadas == (0, 0):
         print("Você não informou a sua localização na opção 2 do menu")
         menu()
-    # posicao = -1
-    # latitude_distancias = []
-    # longitude_distancias = []
-    
-    # for x in range(379):
-    #     posicao += 1
-    #     latitude_taxi_csv = dados.at[posicao, "latitude"]
-    #     longitude_taxi_csv = dados.at[posicao, "longitude"]
-    #     latitude_distancias.append(latitude_taxi_csv)
-    #     longitude_distancias.append(longitude_taxi_csv)
-    # print(latitude_distancias)
-    # print(longitude_distancias)
-
-    # tupla = (latitude_distancias[0], longitude_distancias[0])
-    # print(tupla)
-    # teste = (-29.9598916, -51.0951607)  
-    # distancia = great_circle(teste, tupla).km
-    # print(distancia)
     else:
+        print(f"Suas coordenadas são: {coordenadas}")
         posicao = -1
         todas_distancias = []
         for rua in ruas:
@@ -68,17 +44,17 @@ def opcao3():
             # teste = (-29.9598916, -51.0951607)  
             distancia = great_circle(coordenadas, rua).km
             todas_distancias.append(distancia)
-            print(f'A distância da {nomesRuas[posicao]} é de {distancia:.2f}km')
-
-        menores_distancias = nsmallest(3, todas_distancias)
+            # print(f'A distância da {nomesRuas[posicao]} é de {distancia:.2f}km')
+            menores_distancias = nsmallest(3, todas_distancias)
+        taxi_perto1 = todas_distancias.index(menores_distancias[0])
+        taxi_perto2 = todas_distancias.index(menores_distancias[1])
+        taxi_perto3 = todas_distancias.index(menores_distancias[2])
         print()
-        print(f'Tem um ponto de táxi há {menores_distancias[0]:.2f}km de você')
-        print(f'Tem um ponto de táxi há {menores_distancias[1]:.2f}km de você')
-        print(f'Tem um ponto de táxi há {menores_distancias[2]:.2f}km de você')
-        if distancia == menores_distancias:
-            print(nomesRuas)
+        print(f'{nomesRuas[taxi_perto1]} está a {menores_distancias[0]:.2f}km de você')
+        print(f'{nomesRuas[taxi_perto2]} está a {menores_distancias[1]:.2f}km de você')
+        print(f'{nomesRuas[taxi_perto3]} está a {menores_distancias[2]:.2f}km de você')
         menu()
-
+        
 # Função para pegar os pontos de taxí de um determinado logradouro
 def opcao4():
     buscar = input("Digite o nome do logradouro:\n").upper()
