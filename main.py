@@ -15,7 +15,8 @@ coordenadas = (0, 0)
 # Função para o usuário informar a sua localização;
 def opcao2():
     global coordenadas
-    print("Informe sua localização:")
+    print("Informe sua localização")
+    print("OBS: Utilize '.' para casas decimais")
     latitude = float(input("Digite sua latitude: "))
     longitude = float(input("Digite sua longitude: "))
     coordenadas = (latitude, longitude)
