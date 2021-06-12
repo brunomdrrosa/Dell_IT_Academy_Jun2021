@@ -190,31 +190,31 @@ ernesto = (-30.01050975, -51.19313979)
 trt = (-30.04901778, -51.2277999)
 erechim = (-30.08891856, -51.21727921)
 
-(-30.0318817	-51.23015917)
-(-30.03308343	-51.20822586)
-(-30.01856392	-51.1942766)
-(-30.04468322	-51.20456379)
-(-30.00814565	-51.18398387)
-(-30.04030566	-51.20936089)
-(-30.00578796	-51.09686702)
-(-30.08106774	-51.21223105)
-(-30.03928985	-51.22010299)
-(-30.0755953	-51.21446975)
-(-30.05115755	-51.22970631)
-(-30.02221704	-51.19431182)
-(-30.0095878	-51.15122584)
-(-30.03737725	-51.19763946)
-(-29.98688513	-51.12107032)
-(-30.01493051	-51.20560239)
-(-30.03717544	-51.20646251)
-(-30.03123636	-51.23344543)
--30.0244542	-51.20817979
--30.0806465	-51.21933911
--30.02973972	-51.23437621
--30.02855487	-51.2323768
--30.0812041	-51.24638351
--30.05962507	-51.22882763
--30.04010069	-51.23477796
+praca_marechal = (-30.0318817, -51.23015917)
+cabral = (-30.03308343, -51.20822586)
+mariland = (-30.01856392, -51.1942766)
+sao_manoel = (-30.04468322, -51.20456379)
+bourbon_assisbr = (-30.00814565, -51.18398387)
+jeronimo_ornelas = (-30.04030566, -51.20936089)
+bernardino = (-30.00578796, -51.09686702)
+praca_guia_lopes = (-30.08106774, -51.21223105)
+shopping_olaria = (-30.03928985, -51.22010299)
+cinco_novembro = (-30.0755953, -51.21446975)
+shopping_praia_belas = (-30.05115755, -51.22970631)
+vinte_e_quatro_out_mariland = (-30.02221704, -51.19431182)
+panamericana = (-30.0095878, -51.15122584)
+hcpa = (-30.03737725, -51.19763946)
+foro_sarandi = (-29.98688513, -51.12107032)
+farrapos = (-30.01493051, -51.20560239)
+giordano = (-30.03717544, -51.20646251)
+andradas = (-30.03123636, -51.23344543)
+anexo_moinhos = (-30.0244542, -51.20817979)
+uniritter = (-30.0806465, -51.21933911)
+siqueira = (-30.02973972, -51.23437621)
+capitao_montanha = (-30.02855487, -51.2323768)
+barra = (-30.0812041, -51.24638351)
+mae_de_deus = (-30.05962507, -51.22882763)
+justica_federal = (-30.04010069, -51.23477796)
 -30.10026654	-51.24466976
 -30.02955912	-51.21992694
 -30.04808937	-51.19122567
@@ -480,7 +480,10 @@ ospa, itaborai, jungblut, jeronimo, bourbon, thomas, sarmento, puc, tanaui, vead
 teixeira_mendes, independecia, caergs, fabio_barros, zaffari_lima, joao_zanega, hospital_nossa, alberto_pasqualini, big_shopping,
 terminal, felizardo, posto_gloria, avai, demetrio, polonia_riogrande, assis_br6464, borges, sr_passos, botafogo, azenha,
 sr_passos_andradas, annes_dias, marcilio, auxiliadora, joao_inacio, francisco_rodolfo, novotel, lucas_oliveira, sete_setembro, borges_demetrio,
-luiz_afonso, hotel_plaza, augusto_severo, ernesto, trt, erechim]
+luiz_afonso, hotel_plaza, augusto_severo, ernesto, trt, erechim, praca_marechal, cabral, mariland, sao_manoel, bourbon_assisbr,
+jeronimo_ornelas, bernardino, praca_guia_lopes, shopping_olaria, cinco_novembro, shopping_praia_belas, vinte_e_quatro_out_mariland,
+panamericana, hcpa, foro_sarandi, farrapos, giordano, andradas, anexo_moinhos, uniritter, siqueira, capitao_montanha, barra,
+mae_de_deus, justica_federal]
 print(len(ruas))
 
 
