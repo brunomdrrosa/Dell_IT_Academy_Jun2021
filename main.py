@@ -1,6 +1,6 @@
 # Importar arquivo .csv
 import pandas as pd
-dados = pd.read_csv("pontos_taxi5.csv")
+dados = pd.read_csv("pontos_taxi.csv")
 dados['telefone'] = dados['telefone'].fillna("")
 dados['logradouro'] = dados['logradouro'].fillna("")
 pd.set_option('display.max_rows', None)
