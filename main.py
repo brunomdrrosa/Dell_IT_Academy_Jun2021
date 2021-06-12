@@ -3,25 +3,16 @@ import pandas as pd
 dados = pd.read_csv("pontos_taxi5.csv")
 dados['telefone'] = dados['telefone'].fillna("")
 dados['logradouro'] = dados['logradouro'].fillna("")
-dados['nome'] = dados['nome'].str.replace(u"Å", "A")
 pd.set_option('display.max_rows', None)
 
 from geopy.distance import great_circle
 from heapq import nsmallest
 from coordenadas import nomesRuas, ruas
 
-# Converter os dados para listas
-lista_codigos = dados["codigo"].to_list()
-lista_nomes = dados["nome"].to_list()
-lista_telefone = dados["telefone"].to_list()
 lista_logradouro = dados["logradouro"].to_list()
-lista_numero = dados["numero"].to_list()
-lista_latitude = dados["latitude"].to_list()
-lista_longitude = dados["longitude"].to_list()
-
 coordenadas = (0, 0)
 
-# Função para o usuário armazenar a sua localização;
+# Função para o usuário informar a sua localização;
 def opcao2():
     global coordenadas
     print("Informe sua localização:")
@@ -42,7 +33,6 @@ def opcao3():
         todas_distancias = []
         for rua in ruas:
             posicao += 1
-            # teste = (-29.9598916, -51.0951607)  
             distancia = great_circle(coordenadas, rua).km
             todas_distancias.append(distancia)
             menores_distancias = nsmallest(3, todas_distancias)
@@ -81,7 +71,7 @@ def menu():
     # Permitir que o usuário digite sua localização geográfica e armazená-la
     elif opcao == "2":
         opcao2()
-    # Encontrar os 3 pontos mais próximos baseado na latitude e longitude do usuário
+    # Encontrar os 3 pontos de taxí mais próximos do usuário baseado na latitude e longitude 
     elif opcao == "3":
         opcao3()
     # Buscar pontos por logradouro
