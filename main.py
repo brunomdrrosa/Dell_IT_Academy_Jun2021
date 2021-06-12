@@ -21,17 +21,17 @@ lista_longitude = dados["longitude"].to_list()
 
 coordenadas = (0, 0)
 
+# Função para o usuário armazenar a sua localização;
 def opcao2():
     global coordenadas
     print("Informe sua localização:")
     latitude = float(input("Digite sua latitude: "))
     longitude = float(input("Digite sua longitude: "))
     coordenadas = (latitude, longitude)
-    print(coordenadas)
     print("Localização armazenada.")
     menu()  
 
-# Função que mostra os 3 pontos de táxis mais próximos ao usuário;
+# Função que mostra os 3 pontos de táxis mais próximos ao usuário e as suas distâncias;
 def opcao3():
     if coordenadas == (0, 0):
         print("Você não informou a sua localização na opção 2 do menu")
@@ -50,7 +50,6 @@ def opcao3():
         print(f'{nomesRuas[todas_distancias.index(menores_distancias[1])]} está a {menores_distancias[1]:.2f}km de você')
         print(f'{nomesRuas[todas_distancias.index(menores_distancias[2])]} está a {menores_distancias[2]:.2f}km de você')
         menu()
-
      
 # Função para pegar os pontos de taxí de um determinado logradouro
 def opcao4():
@@ -60,10 +59,6 @@ def opcao4():
         ruas_em_logradouro = dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]][dados['logradouro'] == buscar]
         print(ruas_em_logradouro)
         menu()
-    elif buscar == "ASSIS BRASIL":
-        print(f"Os pontos de taxi ao longo da {buscar} são:")
-        ruas_em_logradouro = dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]][dados['logradouro'] == "AV ASSIS BRASIL"]
-        print(ruas_em_logradouro)
     else:
         print("Não encontramos o logradouro informado no sistema.")
         menu()
