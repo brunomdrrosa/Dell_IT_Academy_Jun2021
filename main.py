@@ -1,7 +1,8 @@
 # Importar arquivo .csv
 import pandas as pd
-dados = pd.read_csv("pontos_taxi.csv", encoding='utf-8')
+dados = pd.read_csv("pontos_taxi5.csv", encoding='utf-8')
 dados['telefone'] = dados['telefone'].fillna("")
+dados['logradouro'] = dados['logradouro'].fillna("")
 dados['nome'] = dados['nome'].str.replace(u"Å", "A")
 pd.set_option('display.max_rows', None)
 
@@ -36,7 +37,7 @@ def opcao3():
         print("Você não informou a sua localização na opção 2 do menu")
         menu()
     else:
-        print(f"Suas coordenadas são: {coordenadas}")
+        print("Os pontos de taxí mais próximos são:")
         posicao = -1
         todas_distancias = []
         for rua in ruas:
@@ -44,15 +45,10 @@ def opcao3():
             # teste = (-29.9598916, -51.0951607)  
             distancia = great_circle(coordenadas, rua).km
             todas_distancias.append(distancia)
-            # print(f'A distância da {nomesRuas[posicao]} é de {distancia:.2f}km')
             menores_distancias = nsmallest(3, todas_distancias)
-        taxi_perto1 = todas_distancias.index(menores_distancias[0])
-        taxi_perto2 = todas_distancias.index(menores_distancias[1])
-        taxi_perto3 = todas_distancias.index(menores_distancias[2])
-        print()
-        print(f'{nomesRuas[taxi_perto1]} está a {menores_distancias[0]:.2f}km de você')
-        print(f'{nomesRuas[taxi_perto2]} está a {menores_distancias[1]:.2f}km de você')
-        print(f'{nomesRuas[taxi_perto3]} está a {menores_distancias[2]:.2f}km de você')
+        print(f'{nomesRuas[todas_distancias.index(menores_distancias[0])]} está a {menores_distancias[0]:.2f}km de você')
+        print(f'{nomesRuas[todas_distancias.index(menores_distancias[1])]} está a {menores_distancias[1]:.2f}km de você')
+        print(f'{nomesRuas[todas_distancias.index(menores_distancias[2])]} está a {menores_distancias[2]:.2f}km de você')
         menu()
         
 # Função para pegar os pontos de taxí de um determinado logradouro
@@ -80,7 +76,6 @@ def menu():
 
     # Listar na tela os dados de todos os pontos de taxi da cidade
     if opcao == 1:
-        # print(dados)
         print(dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]])
         menu()
     # Permitir que o usuário digite sua localização geográfica e armazená-la

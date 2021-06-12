@@ -101,9 +101,29 @@ hoffmann = (-30.0215040522, -51.207416905)
 maxxi = (-29.9823906495, -51.192600204)
 joao_pessoa = (-30.0411891021, -51.2164530974)
 dan = (-30.0310650045, -51.2258034105)
-
-
+pinto_bandeira = (-30.0266981522, -51.2224325076)
+sioma_breitman = (-30.0345967295, -51.1851928004)
+frederico_mentz = (-29.9960514008, -51.2022788349)
+santa_teresinha = (-30.0378329055, -51.2110167788)
+vinte_e_quatro_out = (-30.021675713, -51.1914527215)
+forum = (-30.044479176, -51.2308223551)
+fernando_ferrari = (-29.9749672446, -51.1669746197)
+venancio_aires = (-30.0412534415, -51.2163943713)
+paraguai = (-30.028339, -51.228538)
+sertorio = (-29.9999617646, -51.1996064978)
+barao_do_cotegipe = (-30.0092609968, -51.1886168107)
+cel_marcos = (-30.1322798667, -51.2336366306)
+tiburcio = (-30.0495991753, -51.19478025)
+saldanha_marinho = (-30.0576550117, -51.2225549119)
+pedro_augusto = (-30.1424662276, -51.2179311271)
+hps = (-30.0371848142, -51.2092371706)
+escobar = (-30.1040390603, -51.236296473)
+genuino = (-30.0368071768, -51.2278828667)
+espm = (-30.0544733846, -51.2072566443)
 
 # print(len(nomesRuas))
 ruas = [rodoviaria, av_das_industrias, dom_pedroii, shopping_center_iguatemi_ii, ramalhete, mucio_texeira, marcilio_dias, silveiro, 
-hoffmann, maxxi, joao_pessoa, dan]
+hoffmann, maxxi, joao_pessoa, dan, pinto_bandeira, sioma_breitman, frederico_mentz, santa_teresinha, vinte_e_quatro_out, forum,
+fernando_ferrari, venancio_aires, paraguai, sertorio, barao_do_cotegipe, cel_marcos, tiburcio, saldanha_marinho, pedro_augusto, 
+hps, escobar, genuino, espm]
+print(len(ruas))
