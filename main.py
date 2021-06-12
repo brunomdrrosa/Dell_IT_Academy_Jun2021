@@ -1,6 +1,6 @@
 # Importar arquivo .csv
 import pandas as pd
-dados = pd.read_csv("pontos_taxi5.csv", encoding='utf-8')
+dados = pd.read_csv("pontos_taxi5.csv")
 dados['telefone'] = dados['telefone'].fillna("")
 dados['logradouro'] = dados['logradouro'].fillna("")
 dados['nome'] = dados['nome'].str.replace(u"Å", "A")
@@ -50,15 +50,20 @@ def opcao3():
         print(f'{nomesRuas[todas_distancias.index(menores_distancias[1])]} está a {menores_distancias[1]:.2f}km de você')
         print(f'{nomesRuas[todas_distancias.index(menores_distancias[2])]} está a {menores_distancias[2]:.2f}km de você')
         menu()
-        
+
+     
 # Função para pegar os pontos de taxí de um determinado logradouro
 def opcao4():
     buscar = input("Digite o nome do logradouro:\n").upper()
     if buscar in lista_logradouro:
         print(f"Os pontos de taxi ao longo da {buscar} são:")
-        ruas_em_logradouro = dados[dados['logradouro'] == buscar]
+        ruas_em_logradouro = dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]][dados['logradouro'] == buscar]
         print(ruas_em_logradouro)
         menu()
+    elif buscar == "ASSIS BRASIL":
+        print(f"Os pontos de taxi ao longo da {buscar} são:")
+        ruas_em_logradouro = dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]][dados['logradouro'] == "AV ASSIS BRASIL"]
+        print(ruas_em_logradouro)
     else:
         print("Não encontramos o logradouro informado no sistema.")
         menu()
@@ -72,23 +77,23 @@ def menu():
     print("3. Encontrar pontos próximos")
     print("4. Buscar pontos por logradouro")
     print("5. Terminar o programa")
-    opcao = int(input("Escolha uma das opcões:\n"))
+    opcao = input("Escolha uma das opcões:\n")
 
     # Listar na tela os dados de todos os pontos de taxi da cidade
-    if opcao == 1:
+    if opcao == "1":
         print(dados.loc[:, ["codigo", "nome", "telefone", "logradouro", "numero", "latitude", "longitude"]])
         menu()
     # Permitir que o usuário digite sua localização geográfica e armazená-la
-    elif opcao == 2:
+    elif opcao == "2":
         opcao2()
     # Encontrar os 3 pontos mais próximos baseado na latitude e longitude do usuário
-    elif opcao == 3:
+    elif opcao == "3":
         opcao3()
     # Buscar pontos por logradouro
-    elif opcao == 4:
+    elif opcao == "4":
         opcao4()
     # Fechar o programa
-    elif opcao == 5:
+    elif opcao == "5":
         print("Fechando o programa...")
     else:
         print("Digite um número de 1 a 5")

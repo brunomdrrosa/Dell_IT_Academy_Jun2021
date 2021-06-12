@@ -89,6 +89,8 @@ nomesRuas = ["RODOVIÁRIA", "AV. DAS INDÚSTRIAS X AV. SEVERO DULLIUS", "DOM PED
 " Rua Jorge Babot Miranda x Av. Juca Batista", "JOSÉ FERREIRA DA SILVA X BENTO GONÇALVES", "HOTEL HOLIDAY", "FARRAPOS X HOFFMANN", "ASSIS BRASIL X SERTÓRIO", 
 "JOÃO ALFREDO X REPÚBLICA", "BOULEVARD STRIP CENTER", "MARILAND X 24 DE OUTUBRO", "DONA FIRMINA X BENTO GONÇALVES"]
 
+
+
 rodoviaria = (-30.02399616, -51.2194512698)
 av_das_industrias = (-29.9872776651, -51.1698367788)
 dom_pedroii = (-30.0206083042, -51.1862840548)
@@ -126,4 +128,4 @@ ruas = [rodoviaria, av_das_industrias, dom_pedroii, shopping_center_iguatemi_ii,
 hoffmann, maxxi, joao_pessoa, dan, pinto_bandeira, sioma_breitman, frederico_mentz, santa_teresinha, vinte_e_quatro_out, forum,
 fernando_ferrari, venancio_aires, paraguai, sertorio, barao_do_cotegipe, cel_marcos, tiburcio, saldanha_marinho, pedro_augusto, 
 hps, escobar, genuino, espm]
-print(len(ruas))
+# print(len(ruas))
