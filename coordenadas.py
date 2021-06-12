@@ -389,7 +389,6 @@ felix_cunha = (-30.02101353, -51.20212936)
 flavio_paul = (-30.05271145, -51.17037859)
 gigantinho = (-30.028339, -51.228538)
 felicissimo = (-30.01662405, -51.18869267)
-
 extinto = (-30.00942936, -51.20083809)
 vasco_da_game = (-30.03173644, -51.21213703)
 luzitana = (-30.00838405, -51.18424029)
@@ -440,38 +439,36 @@ uruguai = (-30.02816459, -51.22896591)
 porto_seco = (-30.01416782, -51.11911626)
 jeronimo_ornelas_joao = (-30.04331504, -51.21449115)
 zaffari_higienopolis = (-30.02078971, -51.18132005)
+paulino = (-30.0380989, -51.20321511)
+cefer = (-30.05353444, -51.14707008)
+palmira = (-29.97866611, -51.18904287)
+triangulo = (-30.01075029, -51.14303018)
+dr_flores = (-30.00763128, -51.1528061)
+intercity = (-29.99828483, -51.19399839)
+cavalhada = (-30.12065084, -51.22453501)
+andre_belo = (-30.04651736, -51.22198028)
+lancaster = (-30.0307718, -51.22822459)
+vicente_fontoura_2 = (-30.04918721, -51.20282887)
+carlos_von = (-30.01776137, -51.18859134)
+visconde_herval = (-30.05323474, -51.22206739)
+marechal = (-30.03234347, -51.23012647)
+dr_flores_andradas = (-30.0067965, -51.15251777)
+bento_goncalves_aparicio = (-30.06305984, -51.18637333)
+alfa = (-30.03831021, -51.17295746)
+republica_joao = (-30.03645684, -51.22032597)
+silvado = (-30.06534246, -51.18193472)
+angelo = (-30.09756456, -51.23381977)
+carlos_chagas = (-30.02489098, -51.22292284)
+jorge = (-30.028339, -51.228538)
+jose_ferreira = (-30.06236823, -51.18764759)
+hotel_holiday = (-30.02686522, -51.1821409)
+farrapos_hoffman = (-30.01933559, -51.20997915)
+assis_brasil_sertorio = (-29.98224259, -51.11576054)
+joao_alfredo_republica = (-30.04023087, -51.22594601)
+boulevard = (-30.00892919, -51.14349772)
+mariland_out = (-30.02205292, -51.19391506)
+firmina = (-30.06192836, -51.17123063)
 
-(-30.0380989	-51.20321511)
-(-30.05353444	-51.14707008)
-(-29.97866611	-51.18904287)
-(-30.01075029	-51.14303018)
-(-30.00763128	-51.1528061)
-(-29.99828483	-51.19399839)
-(-30.12065084	-51.22453501)
-(-30.04651736	-51.22198028)
-(-30.0307718	-51.22822459)
-(-30.04918721	-51.20282887)
-(-30.01776137	-51.18859134)
-(-30.05323474	-51.22206739)
-(-30.03234347	-51.23012647)
-(-30.0067965	-51.15251777)
-(-30.06305984	-51.18637333)
-(-30.03831021	-51.17295746)
-(-30.03645684	-51.22032597)
-(-30.06534246	-51.18193472)
-(-30.09756456	-51.23381977)
-(-30.02489098	-51.22292284)
-(-30.028339	-51.228538)
-(-30.06236823	-51.18764759)
-(-30.02686522	-51.1821409)
-(-30.01933559	-51.20997915)
-(-29.98224259	-51.11576054)
-(-30.04023087	-51.22594601)
-(-30.00892919	-51.14349772)
-(-30.02205292	-51.19391506)
-(-30.06192836	-51.17123063)
-
-# print(len(nomesRuas))
 ruas = [rodoviaria, av_das_industrias, dom_pedroii, shopping_center_iguatemi_ii, ramalhete, mucio_texeira, marcilio_dias, silveiro, 
 hoffmann, maxxi, joao_pessoa, dan, pinto_bandeira, sioma_breitman, frederico_mentz, santa_teresinha, vinte_e_quatro_out, forum,
 fernando_ferrari, venancio_aires, paraguai, sertorio, barao_do_cotegipe, cel_marcos, tiburcio, saldanha_marinho, pedro_augusto, 
@@ -506,7 +503,7 @@ extinto, vasco_da_game, luzitana, cecilia, fernando_machado, gen_camara_set, man
 saturnino, jose_alencar_bento, sao_guilherme, bourbon_ipiranga, carrefour_albion, aeroporto, residence, luiz_manoel, erico_verissimo,
 cubanos, cardiologia, cancio, feliz_cunha, sao_pedro, eurico_lara, vicente_fontoura, casemiro, felix_anexo, out_olavo, joao_guimaraes,
 cristovao, lauro, libero, presidio, domingos, mariante_casemiro, nacional, aparicio, goethe, sao_luiz, cabral_joaquim, millenium,
-fabricio, santo_antonio, uruguai, porto_seco, jeronimo_ornelas_joao, zaffari_higienopolis]
-print(len(ruas))
-
-
+fabricio, santo_antonio, uruguai, porto_seco, jeronimo_ornelas_joao, zaffari_higienopolis, paulino, cefer, palmira, triangulo,
+dr_flores, intercity, cavalhada, andre_belo, lancaster, vicente_fontoura_2, carlos_von, visconde_herval, marechal, dr_flores_andradas,
+bento_goncalves_aparicio, alfa, republica_joao, silvado, angelo, carlos_chagas, jorge, jose_ferreira, hotel_holiday, farrapos_hoffman,
+assis_brasil_sertorio, joao_alfredo_republica, boulevard, mariland_out, firmina]
