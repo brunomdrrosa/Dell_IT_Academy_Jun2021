@@ -17,8 +17,8 @@ def opcao2():
     global coordenadas
     print("Informe sua localização")
     print("OBS: Utilize '.' para casas decimais")
-    latitude = float(input("Digite sua latitude: "))
-    longitude = float(input("Digite sua longitude: "))
+    latitude = float(input("Digite sua latitude no formato geodésico decimal: "))
+    longitude = float(input("Digite sua longitude no formato geodésico decimal: "))
     coordenadas = (latitude, longitude)
     print("Localização armazenada.")
     menu()  
@@ -26,10 +26,10 @@ def opcao2():
 # Função que mostra os 3 pontos de táxis mais próximos ao usuário e as suas distâncias;
 def opcao3():
     if coordenadas == (0, 0):
-        print("Você não informou a sua localização na opção 2 do menu")
+        print("Você não informou a sua localização na opção 2 do menu, não é possível encontrar os pontos mais próximos")
         menu()
     else:
-        print("Os pontos de taxí mais próximos são:")
+        print("Os pontos de taxi mais próximos são:")
         posicao = -1
         todas_distancias = []
         for rua in ruas:
@@ -42,7 +42,7 @@ def opcao3():
         print(f'{nomesRuas[todas_distancias.index(menores_distancias[2])]} está a {menores_distancias[2]:.2f}km de você')
         menu()
      
-# Função para pegar os pontos de taxí de um determinado logradouro
+# Função para pegar os pontos de táxi de um determinado logradouro
 def opcao4():
     buscar = input("Digite o nome do logradouro:\n").upper()
     if buscar in lista_logradouro:
@@ -72,7 +72,7 @@ def menu():
     # Permitir que o usuário digite sua localização geográfica e armazená-la
     elif opcao == "2":
         opcao2()
-    # Encontrar os 3 pontos de taxí mais próximos do usuário baseado na latitude e longitude 
+    # Encontrar os 3 pontos de táxi mais próximos do usuário baseado na latitude e longitude 
     elif opcao == "3":
         opcao3()
     # Buscar pontos por logradouro
