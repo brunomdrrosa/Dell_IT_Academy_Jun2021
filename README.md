@@ -46,7 +46,7 @@ $ python main.py
 ```
 
 <p align="center">
-  <a href="https://github.com/tgmarinho/README-ecoleta/blob/master/Insomnia_API_Ecoletajson.json" target="_blank"><img src="https://img.shields.io/badge/-Rodar%20no%20Replit-blue?style=for-the-badge&logo=replit&logoColor=white" alt="Rodar no Replit"></a>
+  <a href="https://replit.com/@brunomdrrosa/DellITAcademyJun2021" target="_blank"><img src="https://img.shields.io/badge/-Rodar%20no%20Replit-blue?style=for-the-badge&logo=replit&logoColor=white" alt="Rodar no Replit"></a>
 </p>
 
 ---
