@@ -7,6 +7,7 @@
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
  <a href="#-funcionalidades">Funcionalidades</a> •
+<a href="#-capturas-de-tela">Capturas de tela</a> •
  <a href="#-como-executar-o-projeto">Como executar</a> • 
  <a href="#-autor">Autor</a> • 
 </p>
@@ -24,6 +25,35 @@ Sendo assim, foi preciso elaborar um programa para colaborar com as cooperativas
 - [x] Listar todos os dados dos pontos de táxi de Porto Alegre
 - [x] Encontrar os pontos mais próximos do usuário baseado na localização dele
 - [x] Buscar os pontos por logradouro
+
+---
+
+## 📸 Capturas de tela
+
+<h2 align="center"> 
+	Menu do programa
+</h2>
+<img src="https://i.imgur.com/bp1jkbI.png"/>
+<h2 align="center"> 
+	Opção 1 do menu
+</h2>
+<img src="https://i.imgur.com/5FzqYbk.png"/>
+<h2 align="center"> 
+	Opção 2 do menu
+</h2>
+<img src="https://i.imgur.com/grKzkhA.png"/>
+<h2 align="center"> 
+	Opção 3 do menu
+</h2>
+<img src="https://i.imgur.com/4zUBTuT.png"/>
+<h2 align="center"> 
+	Opção 4 do menu
+</h2>
+<img src="https://i.imgur.com/POTk5f6.png"/>
+<h2 align="center"> 
+	Opção 5 do menu
+</h2>
+<img src="https://i.imgur.com/hFVlkWe.png"/>
 
 ---
 
@@ -53,8 +83,8 @@ $ python main.py
 
 ## ✒️ Autor
 
-[<img src="https://avatars.githubusercontent.com/u/75590326?v=4" width=115 > <br> <sub> Bruno Machado </sub>](https://github.com/brunomdrrosa) |
-| :---: | 
+| [<img src="https://avatars.githubusercontent.com/u/75590326?v=4" width=115 > <br> <sub> Bruno Machado </sub>](https://github.com/brunomdrrosa) |
+| :--------------------------------------------------------------------------------------------------------------------------------------------: |
 
 <h2 >Entre em contato 🤙🏽</h2>
 
