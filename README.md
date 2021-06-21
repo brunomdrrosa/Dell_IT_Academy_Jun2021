@@ -6,10 +6,10 @@
 
 <p align="center">
  <a href="#-sobre-o-projeto">Sobre</a> •
- <a href="#-funcionalidades">Funcionalidades</a> •
+ <a href="#%EF%B8%8F-funcionalidades">Funcionalidades</a> •
 <a href="#-capturas-de-tela">Capturas de tela</a> •
  <a href="#-como-executar-o-projeto">Como executar</a> • 
- <a href="#-autor">Autor</a> • 
+ <a href="#%EF%B8%8F-autor">Autor</a> • 
 </p>
 
 ## 💻 Sobre o projeto
